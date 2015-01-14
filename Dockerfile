@@ -17,8 +17,8 @@ COPY set_environment_variables.sh /tmp/set_environment_variables.sh
 VOLUME ["/opt/jenkins-workspace"]
 
 # Default swarm settings
-ENV JENKINS_SWARM_EXECUTORS=1
-ENV JENKINS_SWARM_MODE=exclusive
+ENV JENKINS_SWARM_EXECUTORS 1
+ENV JENKINS_SWARM_MODE exclusive
 
 COPY init.sh /opt/init.sh
 
