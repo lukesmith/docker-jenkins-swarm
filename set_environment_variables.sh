@@ -16,7 +16,6 @@ for binding in ${hostbindings// / } ; do
 done
 
 echo "Discovered host path $hostpath"
-echo "JENKINS_WORKSPACE_DIR=$hostpath" >> /etc/environment
 
 if [ "$JENKINS_SWARM_NAME" == "" ] ; then
   name=$(docker inspect --format="{{ .Name }}" $HOSTNAME)
