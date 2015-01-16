@@ -1,6 +1,8 @@
 # Jenkins Swarm Docker container
 
-This container runs the jenkins-swarm client. It is available on on [Docker Hub](https://registry.hub.docker.com/u/lukesmith/jenkins-swarm/)
+This container runs the jenkins-swarm client. It is available on on [Docker Hub](https://registry.hub.docker.com/u/lukesmith/jenkins-swarm/).
+
+The idea for this container is to not actually perform the compilation but instead to run a new Docker container that the build occurs within. The container contains `make`, which makes it super easy to use the container without further modification of build dependencies.
 
 ## Configuration
 
@@ -18,7 +20,7 @@ running a container.
 Docker can be used by jobs that are run by the Swarm container, use `--volume /var/lib/docker.sock:/var/lib/docker.sock`.
 
 Note: The containers will be run on the same host as the Swarm container. This means any volumes mapped will be to the host.
-To access the path that should be used for hosting the environment variable `JENKINS_WORKSPACE_DIR` can be used.
+You can use `$(PWD)` if you use a `Makefile` which will give you the path to the projects absolute path on the host, see below example.
 
 ### Environment variables
 
@@ -39,3 +41,26 @@ for further details.
     JENKINS_SWARM_LABELS: The labels to apply to the swarm instance.
     JENKINS_SWARM_NAME: The name of the swarm instance.
     JENKINS_SWARM_DESCRIPTION: The description of the swarm instance
+    
+## Example
+
+### Makefile
+
+```make
+.PHONY : build ci
+
+default: ci
+
+build:
+		docker build -t my_company/my_project ./
+
+# Use $(PWD) to get the absolute path of the `Makefile` on the Docker host, 
+# which should be in your projects root. In this example /opt/output is a volume
+# in the container where test results are output to, which are then accessible to
+# collect as artifacts in Jenkins.
+ci: build
+		docker run --rm -i \
+			--volume $(PWD)/tmp:/opt/output \
+			my_company/my_project \
+			bash /path_to_where_your_dockerfile_copies_files/script/ci.sh
+```
