@@ -1,6 +1,6 @@
 # Jenkins Swarm Docker container
 
-This container runs the jenkins-swarm client.
+This container runs the jenkins-swarm client. It is available on on [Docker Hub](https://registry.hub.docker.com/u/lukesmith/jenkins-swarm/)
 
 ## Configuration
 
@@ -27,7 +27,8 @@ Environment variables can be set that are passed to the jenkins-client. See the
 for further details.
 
 #### Required
-  JENKINS_MASTER_URL: The jenkins master url
+
+    JENKINS_MASTER_URL: The jenkins master url
 
 #### Optional
 
