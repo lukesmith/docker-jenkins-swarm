@@ -30,10 +30,11 @@ for further details.
   JENKINS_MASTER_URL: The jenkins master url
 
 #### Optional
-  JENKINS_SLAVE_USER: The username to connect to the master
-  JENKINS_SLAVE_PASSWORD: The password to connect to the master
-  JENKINS_SWARM_MODE: The swarm mode. Defaults to exclusive
-  JENKINS_SWARM_EXECUTORS: The number of executors. Defaults to 1
-  JENKINS_SWARM_LABELS: The labels to apply to the swarm instance.
-  JENKINS_SWARM_NAME: The name of the swarm instance.
-  JENKINS_SWARM_DESCRIPTION: The description of the swarm instance
+
+    JENKINS_SLAVE_USER: The username to connect to the master
+    JENKINS_SLAVE_PASSWORD: The password to connect to the master
+    JENKINS_SWARM_MODE: The swarm mode. Defaults to exclusive
+    JENKINS_SWARM_EXECUTORS: The number of executors. Defaults to 1
+    JENKINS_SWARM_LABELS: The labels to apply to the swarm instance.
+    JENKINS_SWARM_NAME: The name of the swarm instance.
+    JENKINS_SWARM_DESCRIPTION: The description of the swarm instance
