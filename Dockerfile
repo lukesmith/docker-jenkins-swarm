@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 MAINTAINER Luke Smith
 
 RUN apt-get update
-RUN apt-get install -y apt-transport-https openjdk-7-jdk curl make openssh-client
+RUN apt-get install -y apt-transport-https openjdk-7-jdk curl make openssh-client git tar
 
 RUN echo deb https://apt.dockerproject.org/repo ubuntu-trusty main > /etc/apt/sources.list.d/docker.list \
   && apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D \

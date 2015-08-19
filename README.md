@@ -41,7 +41,9 @@ for further details.
     JENKINS_SWARM_LABELS: The labels to apply to the swarm instance.
     JENKINS_SWARM_NAME: The name of the swarm instance.
     JENKINS_SWARM_DESCRIPTION: The description of the swarm instance
-    
+    GIT_USER_EMAIL: The git users email
+    GIT_USER_NAME: The git users name
+
 ## Example
 
 ### Makefile
