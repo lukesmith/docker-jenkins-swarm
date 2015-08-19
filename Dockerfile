@@ -20,7 +20,7 @@ VOLUME ["/opt/jenkins-workspace"]
 ENV JENKINS_SWARM_EXECUTORS 1
 ENV JENKINS_SWARM_MODE exclusive
 
-ADD http://maven.jenkins-ci.org/content/repositories/releases/org/jenkins-ci/plugins/swarm-client/1.22/swarm-client-1.22-jar-with-dependencies.jar /opt/jenkins-swarm/swarm-client.jar
+ADD http://maven.jenkins-ci.org/content/repositories/releases/org/jenkins-ci/plugins/swarm-client/2.0/swarm-client-2.0-jar-with-dependencies.jar /opt/jenkins-swarm/swarm-client.jar
 
 COPY set_environment_variables.sh /tmp/set_environment_variables.sh
 COPY init.sh /opt/init.sh
