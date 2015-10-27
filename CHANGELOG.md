@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.6 (2015-10-27)
+
+- Update Docker version to 1.8.3
+
 ## 0.0.5 (2015-08-19)
 
 - Include git within image
