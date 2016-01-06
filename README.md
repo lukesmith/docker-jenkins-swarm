@@ -17,7 +17,8 @@ running a container.
 
 #### Docker
 
-Docker can be used by jobs that are run by the Swarm container, use `--volume /var/lib/docker.sock:/var/lib/docker.sock`.
+Docker can be used by jobs that are run by the Swarm container, use `--volume /var/lib/docker.sock:/var/lib/docker.sock`. You can
+also make use of `docker-compose` within the Swarm container.
 
 Note: The containers will be run on the same host as the Swarm container. This means any volumes mapped will be to the host.
 You can use `$(PWD)` if you use a `Makefile` which will give you the path to the projects absolute path on the host, see below example.
