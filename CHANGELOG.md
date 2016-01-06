@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.0.7 (2015-10-27)
+## 0.0.7 (2016-01-06)
 
 - Update Docker version to 1.9.1
 - Add docker-compose 1.5.2
