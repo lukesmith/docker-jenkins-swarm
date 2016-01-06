@@ -8,7 +8,9 @@ RUN apt-get install -y apt-transport-https openjdk-7-jdk curl make openssh-clien
 RUN echo deb https://apt.dockerproject.org/repo ubuntu-trusty main > /etc/apt/sources.list.d/docker.list \
   && apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D \
   && apt-get update \
-  && apt-get install -y docker-engine=1.9.1-0~trusty
+  && apt-get install -y docker-engine=1.9.1-0~trusty \
+  && curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
+  && chmod +x /usr/local/bin/docker-compose
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
